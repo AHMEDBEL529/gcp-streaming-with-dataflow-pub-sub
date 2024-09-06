@@ -54,9 +54,3 @@ resource "google_cloud_scheduler_job" "pubsub_job" {
     data       = base64encode(var.pubsub_message)  # Uses the message variable
   }
 }
-
-# Create an App Engine application
-resource "google_app_engine_application" "app" {
-  project     = var.project_id
-  location_id = "us-central"  # Use the region variable for App Engine location
-}
